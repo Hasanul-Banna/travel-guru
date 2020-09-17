@@ -1,0 +1,19 @@
+.cards img {
+    height: 300px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.cards img:hover{
+    border: 2px solid gold;
+}
+.cards{
+    position: relative;
+    padding-top: 10px;
+}
+.cards p {
+    color: white;
+    position: absolute;
+    top: 80%;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.384);
+}

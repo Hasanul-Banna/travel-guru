@@ -1,0 +1,28 @@
+.navbar img {
+    width: 100px;
+    filter: brightness(800%);
+}
+.navbar input{
+    width: 300px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.438);
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+input::placeholder {
+    color: lightblue;
+}
+.navbar  nav ul li {
+    text-decoration: none;
+    list-style-type: none;
+    display: inline-block;
+    padding: 0 20px;
+    letter-spacing: 2px;
+}
+.navbar {
+    display: flex;
+    background: transparent;
+    color: white;
+
+}

@@ -1,0 +1,17 @@
+.row p {
+    color: white;
+}
+.row {
+    padding-top: 10%;
+}
+.book{
+    background-color: whitesmoke;
+    padding: 15px 40px;
+    border-radius: 10px;
+}
+.book h4 {
+    background-color: rgba(181, 185, 187, 0.884);
+}
+.book Button {
+    width: 100%;
+}

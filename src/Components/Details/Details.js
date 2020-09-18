@@ -31,13 +31,13 @@ const Details = () => {
         <div className="container row">
             <div className="description col-sm-8">
                 {
-                    (id == "1") ? <h1 style={{color:"white"}}>{card[0].name}</h1> : null
+                    (id == "1") ? <h1 style={{color:"white",fontSize:"100px"}}>{card[0].name}</h1> : null
                 }
                 {
-                    (id == "2") ? <h1 style={{color:"white"}}>{card[1].name}</h1>  : null
+                    (id == "2") ? <h1 style={{color:"white",fontSize:"100px"}}>{card[1].name}</h1>  : null
                 }
                 {
-                    (id == "3") ? <h1 style={{color:"white"}}>{card[2].name}</h1>  : null
+                    (id == "3") ? <h1 style={{color:"white",fontSize:"100px"}}>{card[2].name}</h1>  : null
                 }
                 {
                     (id == "1") ? <p style={{color:"white"}}>{card[0].details}</p> : null
@@ -62,14 +62,14 @@ const Details = () => {
                 {
                     (id == "3") ? <h4>{card[2].name}</h4>  : null
                 }
-                <div className="row">
+                <div style={{paddingTop:"0"}} className="row">
                     <div className="col-sm-6">
                     <h6>FROM:</h6>
-                    <h4>01/09/20 <EventNoteIcon/></h4>
+                    <h4>01/09/20 <EventNoteIcon style={{ float: "right" ,paddingTop:"4px"}}/></h4>
                     </div>
                     <div className="col-sm-6">
                     <h6>To:</h6>
-                    <h4>12/09/20 <EventNoteIcon/></h4>
+                    <h4>12/09/20 <EventNoteIcon style={{ float: "right" ,paddingTop:"4px"}}/></h4>
                     </div>
                 </div> <br/>
                 <Link to="/booking"><Button variant="warning">Start Booking</Button></Link>

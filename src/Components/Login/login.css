@@ -1,6 +1,6 @@
 .login {
  border-radius: 10px;
-    height: 74vh;
+    /* height: 70vh; */
     margin-top: 10%;
     display: flex;
     flex-direction: column;
@@ -17,10 +17,33 @@
 .login form {
     display:flex;
     flex-direction:column;
-}
+} 
+
 .login form input {
     width: 300px;
     font-size: 25px;
     border-radius: 5px;
-    border: none;
+    border: 1px solid lightgray;
+}
+#or {
+    text-align: center;
+    position: relative;
+}
+#or::before{
+    content: '';
+    position: absolute;
+    width: 45%;
+    height: 2px;
+    bottom: 40%;
+    left: 0%;
+    background: gray;
+}
+#or::after{
+    content: '';
+    position: absolute;
+    width: 45%;
+    height: 2px;
+    bottom: 40%;
+    right: 0%;
+    background: gray;
 }

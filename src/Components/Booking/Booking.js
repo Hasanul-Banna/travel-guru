@@ -46,7 +46,7 @@ const Booking = () => {
                             </div>
                         </div>
                     </div>
-                    <div style={{ marginTop: '0', paddingTop: '3%' }} className=" col-sm-6">
+                    <div style={{ marginTop: '0', paddingTop: '5%' }} className=" col-sm-6">
                         <GoogleMap></GoogleMap>
                     </div>
                 </div>

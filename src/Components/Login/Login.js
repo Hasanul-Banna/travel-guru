@@ -58,13 +58,27 @@ const Login = () => {
         }
         e.preventDefault();
     };
+
+    const check = function() {
+        if (document.getElementById('password').value ==
+          document.getElementById('confirm_password').value) {
+          document.getElementById('message').style.color = 'green';
+          document.getElementById('message').innerHTML = 'matching';
+        } else {
+          document.getElementById('message').style.color = 'red';
+          document.getElementById('message').innerHTML = 'not matching';
+        }
+      };
     const handleBlur = (e) => {
         let isFormvalid = true;
         if (e.target.name === 'email') {
             isFormvalid = /\S+@\S+\.\S+/.test(e.target.value);
         }
         if (e.target.name === 'password') {
-            isFormvalid = e.target.value.length > 8;
+            isFormvalid = e.target.value.length > 5;
+        }
+        if (e.target.name === 'confirm_password') {
+            isFormvalid = e.target.value.length > 5;
         }
         if (isFormvalid) {
             const newUser = { ...loggedInUser };
@@ -105,17 +119,25 @@ const Login = () => {
                     <div className="login">
                         <form onSubmit={handleSubmit}>
                             { newPerson && <input type="text" name="displayName" id="" placeholder="Your Fullname"/>} <br/>
-                            <input onBlur={handleBlur} type="text" name="email" id="" placeholder="Your Email" required /> <br />
-                            <input onBlur={handleBlur} type="password" name="password" id="" placeholder="Your Password" required /> <br />
+                            <input  onBlur={handleBlur} type="text" name="email" id="" placeholder="Your Email" required />
+                            <small>Example: abcd@email.com</small>
+                            <input onChange={check} onBlur={handleBlur} type="password" name="password" id="password" placeholder="Your Password" required />
+                            <small>Password length must be more than 6 character</small>
+                            { newPerson && <input onChange={check} type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required/>}
+                           { newPerson && <span id="message"></span>}
                             {
                                 newPerson ? <input style={{ background: "gold", border: "none" }} type="submit" value="Sign Up" /> :
                                 <input style={{ background: "gold", border: "none" }} type="submit" value="Log in" />
                             }
-                        </form> <p style={{color:"red"}}>{loggedInUser.error}</p> <p style={{color:"green"}}>{loggedInUser.success}</p>
-                        <div>
+                        </form> 
+                        { newPerson &&  <div style={{display:"flex"}}>
+                        <span style={{color:"red"}}>{loggedInUser.error}</span>
+                        <span style={{color:"green"}}>{loggedInUser.success}</span>
+                        </div>} 
+                        { !newPerson && <div>
                             <input type="checkbox" name="remember" id="Remember Me" value="Remember Me"></input>
                             <label for="Remember Me">Remember Me</label> <Link style={{float:"right"}}>Forgot password?</Link>
-                        </div>
+                        </div>}
                             {
                                 newPerson ?<p style={{ textAlign: "center", margin:"0" }}>Already have an account? 
                                 <Link onClick={()=> setNewperson(!newPerson)}>Log In</Link> </p> :

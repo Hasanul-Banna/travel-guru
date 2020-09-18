@@ -3,7 +3,7 @@ import './Booking.css';
 import room1 from '../../images/room1.png';
 import room2 from '../../images/room2.png';
 import room3 from '../../images/room3.png';
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import GoogleMap from '../Map/GoogleMap';
 
 
 const Booking = () => {
@@ -46,18 +46,8 @@ const Booking = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm-6">
-                        {/* <Map google={this.props.google} zoom={14}>
-
-                            <Marker onClick={this.onMarkerClick}
-                                name={'Current location'} />
-
-                            <InfoWindow onClose={this.onInfoWindowClose}>
-                                <div>
-                                    <h1>{this.state.selectedPlace.name}</h1>
-                                </div>
-                            </InfoWindow>
-                        </Map> */}
+                    <div style={{ marginTop: '0', paddingTop: '3%' }} className=" col-sm-6">
+                        <GoogleMap></GoogleMap>
                     </div>
                 </div>
             </div>
@@ -66,6 +56,3 @@ const Booking = () => {
 };
 
 export default Booking;
-// export default GoogleApiWrapper({
-//     apiKey: (YOUR_GOOGLE_API_KEY_GOES_HERE)
-//   })(Booking)
